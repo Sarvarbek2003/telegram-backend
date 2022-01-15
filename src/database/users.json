@@ -1,0 +1,30 @@
+[
+    {
+        "userId": 1,
+        "username": "Jon Doe",
+        "password": "42cfd63faff471b4ae9affe5e5a286b6c4b9b0c4dcdba77710d42d831ed0d7e9",
+        "profilImg": "/data/proFiles/rasm.png",
+        "message": "/message/1.json"
+    },
+    {
+        "userId": 2,
+        "username": "Jon Whew",
+        "password": "42cfd63faff471b4ae9affe5e5a286b6c4b9b0c4dcdba77710d42d831ed0d7e9",
+        "profilImg": "/data/proFiles/rasm2.png",
+        "message": "/message/1.json"
+    },
+    {
+        "userId": 3,
+        "username": "Jon Keyj",
+        "password": "42cfd63faff471b4ae9affe5e5a286b6c4b9b0c4dcdba77710d42d831ed0d7e9",
+        "profilImg": "/data/proFiles/rasm3.png",
+        "message": "/message/1.json"
+    },
+    {
+        "userId": 4,
+        "password": "42cfd63faff471b4ae9affe5e5a286b6c4b9b0c4dcdba77710d42d831ed0d7e9",
+        "username": "Sarvarbek",
+        "profilImg": "/data/proFiles/photo_2022-01-05_18-01-31.png",
+        "message": "/data/message/4.json"
+    }
+]

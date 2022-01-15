@@ -1,0 +1,32 @@
+[
+    {
+        "userId": 2,
+        "message":[
+            {
+                "me": 1,
+                "mess": "assalomualekum",
+                "time": "15:52"
+            },
+            {
+                "user": 2,
+                "mess": "Valekumassalom",
+                "time": "15:53"
+            }
+        ]   
+    },
+    {
+        "userId": 3,
+        "message":[
+            {
+                "me": 1,
+                "mess": "assalomualekum",
+                "time": "15:52"
+            },
+            {
+                "user": 2,
+                "mess": "Valekumassalom",
+                "time": "15:53"
+            }
+        ]   
+    }
+]
