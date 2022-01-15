@@ -5,8 +5,20 @@ const GET = (req, res) => {
 		return user
 	}))
 }
+
+const GT = (req, res) => {
+	const users = req.select('users')
+	res.json(users.find(user => {
+		delete user.password
+		if(user.userId == req.userId){
+			return user
+		}
+	}))
+}
+
+
 const MYGET = (req, res) => {
-	const users = req.message('1')
+	const users = req.message(req.userId)
 	res.json(users.map(user => {
 		return user
 	}))
@@ -14,5 +26,6 @@ const MYGET = (req, res) => {
 
 module.exports = {
 	GET,
-	MYGET
+	MYGET,
+	GT
 }

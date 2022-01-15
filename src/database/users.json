@@ -1,6 +1,6 @@
 [
     {
-        "userId": 1,
+        "userId": 4,
         "username": "Jon Doe",
         "password": "42cfd63faff471b4ae9affe5e5a286b6c4b9b0c4dcdba77710d42d831ed0d7e9",
         "profilImg": "/data/proFiles/rasm.jpg",
@@ -21,7 +21,7 @@
         "message": "/message/3.json"
     },
     {
-        "userId": 4,
+        "userId": 1,
         "password": "42cfd63faff471b4ae9affe5e5a286b6c4b9b0c4dcdba77710d42d831ed0d7e9",
         "username": "Sarvarbek",
         "profilImg": "/data/proFiles/photo_2022-01-05_18-01-31.png",

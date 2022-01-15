@@ -5,7 +5,8 @@ const authTokenMiddleware = require('../middlewares/authToken.js')
 
 
 router.route('/')
-	.get(userController.GET)
+	.get(authTokenMiddleware,userController.GET)
+	.post(authTokenMiddleware,userController.GT)
 
 router.route('/my')
 	.get(authTokenMiddleware,userController.MYGET)
