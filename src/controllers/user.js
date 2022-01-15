@@ -5,7 +5,14 @@ const GET = (req, res) => {
 		return user
 	}))
 }
+const MYGET = (req, res) => {
+	const users = req.message('1')
+	res.json(users.map(user => {
+		return user
+	}))
+}
 
 module.exports = {
-	GET
+	GET,
+	MYGET
 }

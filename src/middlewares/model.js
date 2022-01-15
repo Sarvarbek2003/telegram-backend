@@ -7,10 +7,16 @@ const model = (req, res, next) => {
 		files = files ? JSON.parse(files): []
 		return files
 	}
-
+	
 	req.insert = function (fileName, data) {
 		let files = fs.writeFileSync(path.join(process.cwd(), 'src', 'database', fileName + '.json'), JSON.stringify(data, null, 4))
 		return true
+	}
+
+	req.message = function (fileName) {
+		let files = fs.readFileSync(path.join(process.cwd(), 'src', 'database', 'message', fileName + '.json'), 'UTF-8')
+		files = files ? JSON.parse(files): []
+		return files
 	}
 	return next()
 }
