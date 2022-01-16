@@ -18,6 +18,12 @@ const model = (req, res, next) => {
 		files = files ? JSON.parse(files): []
 		return files
 	}
+
+	req.postmessage = function (fileName, data) {
+		let files = fs.writeFileSync(path.join(process.cwd(), 'src', 'database', 'message' ,fileName + '.json'), JSON.stringify(data, null, 4))
+		return true
+	}
+
 	return next()
 }
 

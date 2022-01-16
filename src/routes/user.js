@@ -10,5 +10,6 @@ router.route('/')
 
 router.route('/my')
 	.get(authTokenMiddleware,userController.MYGET)
+	.post(authTokenMiddleware,userController.POST)
 
 module.exports = router

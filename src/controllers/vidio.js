@@ -1,8 +1,8 @@
 const path = require('path')
 const jwt = require('jsonwebtoken')
-const d = new Date()
 const fs = require('fs')
 
+const d = new Date()
 let y = '' + d.getFullYear()
 let m = '' + d.getMonth()+1
 let dat = '' + d.getDate()

@@ -43,10 +43,13 @@ const REGISTER = (req, res) => {
 			profilImg: '/data/proFiles/' + imageName,
 			message: '/data/message/' + useId + '.json'		
 		}
+
+		let template = []
 		
 		users.push(newUser)
 
 		req.insert('users', users)
+		req.postmessage(useId, template)
 
 		res.status(201).json({
 			userId: newUser.userId,
