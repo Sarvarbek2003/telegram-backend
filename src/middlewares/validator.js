@@ -14,7 +14,7 @@ const registerValidator = (req, res, next) => {
 		});
 
 		if(images.size > 5000000) throw new Error("Max file size 5Mb!")
-		if(!(images.mimetype == 'image/png' || images.mimetype == 'image/jpg')) throw new Error("invalid file type. Example(png, jpg)")
+		if(!(images.mimetype == 'image/png' || images.mimetype == 'image/jpeg' || images.mimetype == 'image/jpg')) throw new Error("invalid file type. Example(png, jpg)")
 
 		if(typeof(username) !== 'string' || username.length < 2 || username.length > 20) {
 			throw new Error("Invalid username!")
