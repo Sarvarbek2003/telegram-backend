@@ -32,32 +32,82 @@ const MYGET = (req, res) => {
 }
 
 const POST = (req, res) => {
-	const users = req.message(req.userId)
-	const { text, userId } = req.body
-	let newMes = {
-		"me": 1,
-		"mess": text,
-		"time": date
-	}
-
-	users.map(user => {
-		if(req.body.userId == user.userId){
-			let mesId = user.message.map(mes =>{
-				return mes.mesId
-			})
-			let mesID = mesId.length ? mesId[mesId.length - 1]+1 : 1
-			newMes.mesId = mesID
-			user.message.push(newMes)
+	try{
+		const { text, userId } = req.body
+		const users = req.message(req.userId)
+		const users2 = req.message(userId)
+		
+		let newMes = {
+			"me": 1,
+			"mess": text,
+			"time": date
 		}
-		else return 
-	})
-	
-	req.postmessage(req.userId,users)
+		
+		let mapList = users.find(user => {
+			if(+userId == +user.userId){
+				let mesId = user.message.map(mes =>{
+					return mes.mesId
+				})
+				let mesID = mesId.length ? mesId[mesId.length - 1]+1 : 1
+				newMes.mesId = mesID
+				return user.message.push(newMes)		
+				
+			} 
+		})
+		
+		if(!mapList){
+			newMes.mesId = 1
+			let newUser = {
+				userId: +userId,
+				message:[
+					newMes
+				]
+			}
+			users.push(newUser)
+		}  
 
-	let user = res.json(
-		users.map(user => {
-			return user
-	}))
+		let newMes2 = {
+			"user": 1,
+			"mess": text,
+			"time": date
+		}
+
+		let mapList2 = users2.find(user => {
+			if(+req.userId == +user.userId){
+				let mesId = user.message.map(mes =>{
+					return mes.mesId
+				})
+				let mesID = mesId.length ? mesId[mesId.length - 1]+1 : 1
+				newMes.mesId = mesID
+				return user.message.push(newMes2)		
+				
+			} 
+		})
+
+		if(!mapList2){
+			newMes2.mesId = 1
+			let newUser = {
+				userId: +req.userId,
+				message:[
+					newMes2
+				]
+			}
+			users2.push(newUser)
+		}  
+		
+		req.postmessage(req.userId,users)
+		req.postmessage(userId,users2)
+
+		res.json(
+			users.map(user => {
+				return user
+		}))
+	} catch (error){
+		res.status(4001).json(
+			users.map(user => {
+				return user
+		}))
+	}
 }
 
 

@@ -19,5 +19,12 @@
         "username": "Sarvarbek2233",
         "profilImg": "/data/proFiles/3909226.png",
         "message": "/data/message/3.json"
+    },
+    {
+        "userId": 4,
+        "password": "42cfd63faff471b4ae9affe5e5a286b6c4b9b0c4dcdba77710d42d831ed0d7e9",
+        "username": "ali",
+        "profilImg": "/data/proFiles/Снимокэкранаот2022-01-1616-05-12.png",
+        "message": "/data/message/4.json"
     }
 ]
