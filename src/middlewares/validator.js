@@ -68,8 +68,25 @@ const vidioValidation = (req, res, next) => {
     }
 }
 
+const textValidator = (req, res, next) => {
+	try {
+		const {text,userId} = req.body
+
+		if (!text) throw new Error("text is required!")
+		if (!userId) throw new Error("userId is required")
+		
+		if (text.length < 500) throw new Error("text maximum length 500")
+		
+		next()
+
+	}catch(error){
+		res.status(401).json({message: error.message})
+	}
+}
+
 module.exports = {
 	registerValidator,
 	loginValidator,
-	vidioValidation
+	vidioValidation,
+	textValidator
 }
