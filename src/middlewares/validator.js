@@ -75,7 +75,7 @@ const textValidator = (req, res, next) => {
 		if (!text) throw new Error("text is required!")
 		if (!userId) throw new Error("userId is required")
 		
-		if (text.length < 500) throw new Error("text maximum length 500")
+		if (text.length > 500) throw new Error("text maximum length 500")
 		
 		next()
 
