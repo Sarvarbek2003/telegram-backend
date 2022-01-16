@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const userController = require('../controllers/user.js')
 const authTokenMiddleware = require('../middlewares/authToken.js')
+const validator = require('../middlewares/validator.js')
 
 
 
@@ -10,6 +11,6 @@ router.route('/')
 
 router.route('/my')
 	.get(authTokenMiddleware,userController.MYGET)
-	.post(textValidator,authTokenMiddleware,userController.POST)
+	.post(validator.textValidator,authTokenMiddleware,userController.POST)
 
 module.exports = router
