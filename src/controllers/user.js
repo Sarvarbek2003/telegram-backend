@@ -1,9 +1,4 @@
-const d = new Date()
 
-let h = '' + d.getHours()
-let min = '' + d.getMinutes()
-
-let date = `${h.padStart(2, '0')}:${min.padStart(2, '0')}`
 
 const GET = (req, res) => {
 	const users = req.select('users')
@@ -36,6 +31,12 @@ const POST = (req, res) => {
 		const { text, userId } = req.body
 		const users = req.message(req.userId)
 		const users2 = req.message(userId)
+		const d = new Date()
+
+		let h = '' + d.getHours()
+		let min = '' + d.getMinutes()
+
+		let date = `${h.padStart(2, '0')}:${min.padStart(2, '0')}`
 		
 		let newMes = {
 			"me": 1,
